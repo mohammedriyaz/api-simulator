@@ -14,3 +14,10 @@ When frontend and backend team started working on some feature parallelly, many 
 * Frontend team can demonstrate their work without relying on endpoints
 * QA team can change the payload instantly to test different scenarios
 * Json data structure can be readily referable from working mock data
+
+## Getting Started
+
+Install api-simulator
+```
+npm i api-simulator
+```
