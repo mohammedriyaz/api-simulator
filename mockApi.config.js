@@ -11,8 +11,8 @@ const MOCK_API_CONFIGS = {
     "useTheseFeatureMocks":["LH2"],
     // ssl cert files. by default it will uses openssl self signed files those are generated for localhost
     "sslCertFiles": {
-        "key": "./key.pem",
-        "cert": "./cert.pem"
+        "key": __dirname + "/key.pem",
+        "cert": __dirname + "/cert.pem"
     },
     //Add the route file name that should ignore .json
     // extension on their endpoint. ex. "get_user.json" will be served for "/backend/sessions/get_user"
