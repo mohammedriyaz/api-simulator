@@ -262,8 +262,8 @@ getDirectories(featureDataSetPath/*__dirname + '/FeatureMockJsons'*/, function (
             server.use(baseUrlPath, jsonServer.router(db));//registering mock rountes
 
             var options = {//for https
-                key: fs.readFileSync((mockAPIConfigs.sslCertFiles && mockAPIConfigs.sslCertFiles.key) || './key.pem'),
-                cert: fs.readFileSync((mockAPIConfigs.sslCertFiles && mockAPIConfigs.sslCertFiles.cert) || './cert.pem')
+                key: fs.readFileSync((mockAPIConfigs.sslCertFiles && mockAPIConfigs.sslCertFiles.key) || pathAPI.resolve(__dirname, './key.pem')),
+                cert: fs.readFileSync((mockAPIConfigs.sslCertFiles && mockAPIConfigs.sslCertFiles.cert) || pathAPI.resolve(__dirname, './cert.pem'))
             };
             https.createServer(options, server).listen(3030, function() {
                 console.log("api-simulator started on port " + 3030);
