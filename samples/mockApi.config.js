@@ -1,14 +1,14 @@
 const MOCK_API_CONFIGS = {
     "apiEndpointExtension": ".php",
     // path to deafult mock dataset folder, it should be absolute or relative to current working directory
-    "defaultMockDataPath": "../../MockJsons",
+    "defaultMockDataPath": __dirname + "/default-mock-dataset",
     // path to feature mock datasets folder, it should be absolute or relative to current working directory
-    "featureMockDataPath": "../../FeatureMockJsons",
+    "featureMockDataPath": __dirname + "/feature-mock-datasets",
     // base url path. path that needs to appended with api url. ex. https//localhost:3001/backend
-    "baseUrlPath": "/backend",
+    "baseUrlPath": "/mockapi",
     //we can set feature specific mock data that needs to be dispatched through specific api call.
     // if give list of features, it will take mock data from first matched mock endpoint path, otherwise dispatch mock data from root route
-    "useTheseFeatureMocks":["LH2"],
+    "useTheseFeatureMocks":["feature1"],
     // ssl cert files. by default it will uses openssl self signed files those are generated for localhost
     "sslCertFiles": {
         "key": __dirname + "/key.pem",

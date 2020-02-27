@@ -9,9 +9,9 @@ const jsonServer = require('json-server'),
 let mockAPIConfigs;
 
 try {
-    mockAPIConfigs = require("./mockApi.config");
-    mockAPIConfigs.defaultMockDataPath = mockAPIConfigs.defaultMockDataPath || '../../MockJsons';
-    mockAPIConfigs.featureMockDataPath = mockAPIConfigs.featureMockDataPath || '../../FeatureMockJsons';
+    mockAPIConfigs = require("./samples/mockApi.config");
+    mockAPIConfigs.defaultMockDataPath = mockAPIConfigs.defaultMockDataPath || pathAPI.resolve(__dirname, "./samples/default-mock-dataset");
+    mockAPIConfigs.featureMockDataPath = mockAPIConfigs.featureMockDataPath || pathAPI.resolve(__dirname, "./samples/feature-mock-datasets");
 } catch (e) {
     mockAPIConfigs = {};
 }
@@ -262,8 +262,8 @@ getDirectories(featureDataSetPath/*__dirname + '/FeatureMockJsons'*/, function (
             server.use(baseUrlPath, jsonServer.router(db));//registering mock rountes
 
             var options = {//for https
-                key: fs.readFileSync((mockAPIConfigs.sslCertFiles && mockAPIConfigs.sslCertFiles.key) || pathAPI.resolve(__dirname, './key.pem')),
-                cert: fs.readFileSync((mockAPIConfigs.sslCertFiles && mockAPIConfigs.sslCertFiles.cert) || pathAPI.resolve(__dirname, './cert.pem'))
+                key: fs.readFileSync((mockAPIConfigs.sslCertFiles && mockAPIConfigs.sslCertFiles.key) || pathAPI.resolve(__dirname, './samples/key.pem')),
+                cert: fs.readFileSync((mockAPIConfigs.sslCertFiles && mockAPIConfigs.sslCertFiles.cert) || pathAPI.resolve(__dirname, './samples/cert.pem'))
             };
             https.createServer(options, server).listen(3030, function() {
                 console.log("api-simulator started on port " + 3030);

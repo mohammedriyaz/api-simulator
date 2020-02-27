@@ -1,0 +1,5 @@
+{
+  "id": "mockapiresponsefromlevel1child1",
+  "path": "https://localhost:3030/mockapi/child1/apiNestedLevel1Child1.php",
+  "message": "mock call received"
+}
