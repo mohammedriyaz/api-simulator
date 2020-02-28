@@ -100,27 +100,26 @@ Once you installed, the package will be installed with sample mocks and config f
    
  2. ### Step 2
     Create config file based on our requirement
+    
+    ![Create Config File](https://github.com/mohammedriyaz/myreadmeassets/blob/master/mockdataset.png)
      
      ```
      const MOCK_API_CONFIGS = {
-         "apiEndpointExtension": ".php",
-         "defaultMockDataPath":  "samples/default-mock-dataset",
-         "featureMockDataPath":  "samples/feature-mock-datasets",
-         "baseUrlPath": "/backend",
-         "useTheseFeatureMocks":[],
-         "sslCertFiles": {
-             "key": "samples/key.pem",
-             "cert": "samples/cert.pem"
-         },
-         "ignoreJsonExtension": [
-             "userinfo.json",
-             "callback.json"
-         ],
-         "ignoreQueryStringParameter": {
-             "/backend/books.json": {
-                 "id": ""
-             }
+       "apiEndpointExtension": ".php",
+       // give mockfolder path relative to package. since the package will be in project/node_modules/api-simulator,
+       // give relative path of mockdata folders like below
+       "defaultMockDataPath":  "../../mocks/defaultMockDataset",
+       "featureMockDataPath":  "../../mocks/featureMockDataset",
+       "baseUrlPath": "/backend",
+       "useTheseFeatureMocks":[],
+       "ignoreJsonExtension": [
+         "userinfo.json"
+       ],
+       "ignoreQueryStringParameter": {
+         "/backend/books.json": {
+           "id": ""
          }
+       }
      }
 
      module.exports = MOCK_API_CONFIGS;
@@ -128,5 +127,65 @@ Once you installed, the package will be installed with sample mocks and config f
 3. ### Step 3
    
    Create default and feature mock data set
+   
+   ![Mock Dataset folder stricture](https://github.com/mohammedriyaz/myreadmeassets/blob/master/folderstructure_of_mockdataset.png)
+   
+4. ### Step 4
+
+   That's it your ready to run your mock server. if you are installed locally, then you need to add npm script command in your package.json file
+   
+   ```
+   "api:simulator": "api-simulator -c mocks/apisimulator.config.js"
+   ```
+   
+5. ### Step 5
+   
+   Execute following command to run the api-simulator
+   
+   ```
+   npm run api:simulator
+   ```
+   It will start the api-simulator server and it will be listening port 3030. You can access the mock api from 
+   
+   ```
+   https://localhost:3030/<baseUrlPath>
+   ```
+   
+ 6. ### Step 6
+ 
+    Now you can see the mock api responses
+    
+    *** api without extension ***
+    ![api without extension](https://github.com/mohammedriyaz/myreadmeassets/blob/master/apicall_without_extension_1.png)
+    
+    *** api with extension ***
+    ![api with extension](https://github.com/mohammedriyaz/myreadmeassets/blob/master/apicall_with_extension.png)
+    
+    *** api call which ignores query param as per configuration ***
+    ![api call which ignores query params](https://github.com/mohammedriyaz/myreadmeassets/blob/master/apicall_ignored_qr_param.png)
+    
+    *** api call with filtered mockdata using qr param ***
+    ![api call with filtered mockdata using qr param](https://github.com/mohammedriyaz/myreadmeassets/blob/master/apicall_filtered_data_with_qr_param.png)
+    
+    *** different mockdata with configured feature data sets ***
+    ![feature set config](https://github.com/mohammedriyaz/myreadmeassets/blob/master/with_featureset.png)
+    
+    ![data from configured feature set](https://github.com/mohammedriyaz/myreadmeassets/blob/master/data_from_featureset.png)
+    
+    ![default and feature data for same api](https://github.com/mohammedriyaz/myreadmeassets/blob/master/data_from_featureset_1.png)
+    
+    ![data from configured feature set 2](https://github.com/mohammedriyaz/myreadmeassets/blob/master/data_from_featureset2.png)
+    
+    ![default and feature2 data for same api](https://github.com/mohammedriyaz/myreadmeassets/blob/master/data_from_feature2_1.png)
+    
+    
+## Authors
+
+* **Mohammed Riyaz**
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+   
    
    
