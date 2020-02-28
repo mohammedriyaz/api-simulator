@@ -32,6 +32,8 @@ Once you installed, the package will be installed with sample mocks and config f
 
 ### apisimulator.config.js
 
+[Click here](https://github.com/mohammedriyaz/api-simulator/blob/master/samples/mockApi.config.js) to refer sample config file 
+
  * apiEndpointExtension -> default value is ".json". ex. "apiEndpointExtension": ".php" or "apiEndpointExtension": ".jsp" and etc
  
  * defaultMockDataPath -> path to mock api response payloads. The api response payloads will be refered from these file path based on give url. ex. "defaultMockDataPath":  "samples/default-mock-dataset"
