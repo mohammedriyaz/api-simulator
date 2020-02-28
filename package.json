@@ -1,6 +1,6 @@
 {
   "name": "api-simulator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "When frontend and backend team started working on some feature parallelly, many cases the frontend team needs to wait for backend api/endpoint to progress on frontend development. \nTo avoid those wait times, we could use this api simulator to mock backend payloads those agreed with backend team. so that the api simulator will mimic like actual backend api and dispatches mock payloads for frontend api requests.\n\nIt has following key features. \n\n Very simple to add mock APIs. Its just matter of creating directory structure like expected api path and added the json file with mock payload\nCustomizable behaviors through config file, so that developer doesn't need to know about mockserver code \nFeature specific mock data set. Using this, developer can create multiple mock data set those specific to some feature developments\nKey Benefits:\n\nAvoid frontend team wait times for actual backend endpoints\nFrontend team can demonstrate their work without relying on endpoints\nQA team can change the payload instantly to test different UI scenarios\nJson data structure can be readily referable from working mock data",
   "main": "MockServer.js",
   "scripts": {
