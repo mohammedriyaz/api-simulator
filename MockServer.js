@@ -237,8 +237,9 @@ getDirectories(featureDataSetPath/*__dirname + '/FeatureMockJsons'*/, function (
                                 pathsObj = {}, routePath;
                             if (paths.length > 1) {
                                 let leaf = paths.pop(),
-                                    routeObj = {};
-                                routePath = baseUrlPath + paths.join("/");
+                                    routeObj = {},
+                                    mergedPathStr = paths.join("/");
+                                routePath = baseUrlPath + (mergedPathStr[0] === "/" ? mergedPathStr : "/" + mergedPathStr);
                                 if (flatNestedPath.indexOf(val)<0) {
                                     routeObj[validateAndRepJsonExt(leaf)] = require(featurePath||val);
                                 }
