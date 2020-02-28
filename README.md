@@ -87,3 +87,46 @@ Once you installed, the package will be installed with sample mocks and config f
       "name": "Riyaz"
     }, ...
     ```
+## Step by Steb usage details
+
+1. ### Step 1
+   ```
+   npm i api-simulator
+   ```
+      OR
+   ```
+   npm i -g api-simulator
+   ```
+   
+ 2. ### Step 2
+    Create config file based on our requirement
+     
+     ```
+     const MOCK_API_CONFIGS = {
+         "apiEndpointExtension": ".php",
+         "defaultMockDataPath":  "samples/default-mock-dataset",
+         "featureMockDataPath":  "samples/feature-mock-datasets",
+         "baseUrlPath": "/backend",
+         "useTheseFeatureMocks":[],
+         "sslCertFiles": {
+             "key": "samples/key.pem",
+             "cert": "samples/cert.pem"
+         },
+         "ignoreJsonExtension": [
+             "userinfo.json",
+             "callback.json"
+         ],
+         "ignoreQueryStringParameter": {
+             "/backend/books.json": {
+                 "id": ""
+             }
+         }
+     }
+
+     module.exports = MOCK_API_CONFIGS;
+     ```
+3. ### Step 3
+   
+   Create default and feature mock data set
+   
+   
