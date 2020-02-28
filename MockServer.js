@@ -5,11 +5,19 @@ const jsonServer = require('json-server'),
     fs = require('fs'),
     pathAPI = require('path'),
     https = require('https'),
-    glob = require("glob");
+    glob = require("glob"),
+    argv = require('yargs')
+        .usage('Usage: $0 --config <config_file_path>')
+        .example('$0 --config ./apisimulator.config.js', 'Start the api-simulator using given config options')
+        .alias('c', 'config')
+        .help('h')
+        .alias('h', 'help')
+        .argv;
 let mockAPIConfigs;
 
 try {
-    mockAPIConfigs = require("./samples/mockApi.config");
+    console.log(pathAPI.resolve(argv.config));
+    mockAPIConfigs = require(argv.config ? pathAPI.resolve(argv.config) : "./samples/apisimulator.config");
     mockAPIConfigs.defaultMockDataPath = mockAPIConfigs.defaultMockDataPath || pathAPI.resolve(__dirname, "./samples/default-mock-dataset");
     mockAPIConfigs.featureMockDataPath = mockAPIConfigs.featureMockDataPath || pathAPI.resolve(__dirname, "./samples/feature-mock-datasets");
 } catch (e) {
