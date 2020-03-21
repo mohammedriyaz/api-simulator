@@ -108,8 +108,8 @@ Once you installed, the package will be installed with sample mocks and config f
        "apiEndpointExtension": ".php",
        // give mockfolder path relative to package. since the package will be in project/node_modules/api-simulator,
        // give relative path of mockdata folders like below
-       "defaultMockDataPath":  "../../mocks/defaultMockDataset",
-       "featureMockDataPath":  "../../mocks/featureMockDataset",
+       "defaultMockDataPath":  "../../../mocks/defaultMockDataset",
+       "featureMockDataPath":  "../../../mocks/featureMockDataset",
        "baseUrlPath": "/backend",
        "useTheseFeatureMocks":[],
        "ignoreJsonExtension": [
