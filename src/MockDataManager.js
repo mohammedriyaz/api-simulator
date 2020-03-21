@@ -288,8 +288,8 @@ MockDataManager.prototype = {
 
     launchHttpsServer() {
         let options = {//for https
-            key: fs.readFileSync((this.config.sslCertFiles && this.config.sslCertFiles.key) || pathAPI.resolve(__dirname, './samples/key.pem')),
-            cert: fs.readFileSync((this.config.sslCertFiles && this.config.sslCertFiles.cert) || pathAPI.resolve(__dirname, './samples/cert.pem'))
+            key: fs.readFileSync((this.config.sslCertFiles && this.config.sslCertFiles.key) || pathAPI.resolve(__dirname, '../samples/key.pem')),
+            cert: fs.readFileSync((this.config.sslCertFiles && this.config.sslCertFiles.cert) || pathAPI.resolve(__dirname, '../samples/cert.pem'))
         };
         https.createServer(options, this.server).listen(3030, function () {
             console.log("api-simulator started on port " + 3030);
