@@ -179,7 +179,7 @@ Once you installed, the package will be installed with sample mocks and config f
     ![default and feature2 data for same api](https://github.com/mohammedriyaz/myreadmeassets/blob/master/data_from_feature2_1.png)
     
     
-## Authors
+## Author
 
 * **Mohammed Riyaz**
 

@@ -8,7 +8,7 @@ const MOCK_API_CONFIGS = {
     "baseUrlPath": "/mockapi",
     //we can set feature specific mock data that needs to be dispatched through specific api call.
     // if give list of features, it will take mock data from first matched mock endpoint path, otherwise dispatch mock data from root route
-    "useTheseFeatureMocks":["feature1"],
+    "useTheseFeatureMocks":["feature1", "feature2"],
     // ssl cert files. by default it will uses openssl self signed files those are generated for localhost
     "sslCertFiles": {
         "key": __dirname + "/key.pem",
@@ -70,5 +70,5 @@ const MOCK_API_CONFIGS = {
 
     }
 }
-
+//export default MOCK_API_CONFIGS;
 module.exports = MOCK_API_CONFIGS;

@@ -1,0 +1,5 @@
+{
+  "id": "mockapiresponsefromFeature2",
+  "path": "https://localhost:3030/mockapi/feature2RootLevelApi.php",
+  "message": "mock call received"
+}
