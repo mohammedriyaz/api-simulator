@@ -93,7 +93,7 @@ MockDataManager.prototype = {
 
     setupApiHandlers: function () {
         this.server.use(jsonServer.bodyParser);
-        this.server.use(function (req, res, next) {
+        this.server.use((req, res, next) => {
             if (req.method === 'POST' || req.method === 'PUT') {//typical restful service will add/update data through POST/PUT method,
                 // jsonserver also follow the same, so we internally change the methode
                 // to GET to fetch the router data back
