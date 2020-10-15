@@ -161,7 +161,7 @@ Once you installed, the package will be installed with sample mocks and config f
    https://localhost:3030/<baseUrlPath>
    ```
    
-   If you want to see the behavior with default sample data, you can follow the below step
+   If you want to see the behavior with default sample data, you can run below command(if you installed this package globally, you can run from anywhere, other wise trigger this command from installed path)
    ```
    api-simulator
    ```
