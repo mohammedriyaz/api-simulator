@@ -32,7 +32,7 @@
   "dependencies": {
     "glob": "^7.1.6",
     "json-server": "^0.16.1",
-    "yargs": "^15.1.0"
+    "yargs": "^15.4.1"
   },
   "devDependencies": {}
 }
